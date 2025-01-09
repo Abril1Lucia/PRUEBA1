@@ -1,12 +1,14 @@
-import { userModel } from "../models/Users.model"
+import { userModel } from "../models/Users.model.js"
 import bcrypt from "bcryptjs";
 
 
-
 export const createUser = async (req, res) => {
+
+
+  
     try {
 
-      const { fullName, email, password, phone} = req.body;
+      const {fullName, email, password, phone} = req.body;
   
       // password = vivaelpan;
 
@@ -20,20 +22,32 @@ export const createUser = async (req, res) => {
       });
   
       return res.status(201).json({
-          mensaje: 'hola we, ya te cree un usuario',
+          mensaje: 'ya te cree un usuario, no molestes y dejame comer mi ajiaco.',
           datos: newUser
       });
   
     } catch (error) {
-      return res.status(400).json({
-          mensaje: ':c tu fealdad, se tiro el server!',
-          problema: error || error.message
-      });
+
+      return res.status(500).json({ 
+        mensaje: ':c tu fealdad, se tiro el server!',
+        problema: error.message });
     }
   };
   
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
   // get Mostrar
   export const showUsers = async (req, res) => {
     
@@ -42,19 +56,19 @@ export const createUser = async (req, res) => {
       let users = await userModel.find();
       if(users.length === 0){
           return res.status(200).json({
-              mensaje: 'tas solito we ;-;'
+              mensaje: 'estamos los dos solitos aca... jugamos UNO?'
           })
       }
   
       return res.status(200).json({
-          menasaje: 'ya no estas solito we',
+          menasaje: 'ya no estas solito... mejor juguemos parques entonces',
           numeroUsuarios: users.length,
           datos: users
       })
   
     } catch (error) {
       return res.status(400).json({
-          mensaje: 'no c pudo we ;-; no c moleste que es mi primer dia D:',
+          mensaje: 'no c moleste que es mi primer dia D: yo que culpa!?',
           problema: error || error.message
       });
     }
