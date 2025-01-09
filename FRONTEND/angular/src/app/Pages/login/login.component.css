@@ -6,7 +6,7 @@ main{
 
 
 .Fondo{
-    background-image: linear-gradient(180deg, #071030 10%, #878eda 100% );
+    background-image: linear-gradient(180deg, #00092A 17%, #4d5db4 100%);
     width: 100%;
     height: 100%;
 }
@@ -24,22 +24,25 @@ main{
 }
 
 .container {
+    /* width: 100vw; */
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* margin-top: 75px;
+    margin-bottom: 75px; */
+
     padding-top: 60px;
     padding-bottom: 60px;
 }
 
 .form-content {
-    height: 400px;
+    /* width: 400px; */
+    height: auto;
     background-color: #F2F2F2;
-    opacity: 1.8;
     padding: 20px 50px;
     text-align: center;
     border-radius: 30px;
-    animation: miAnimacion 2s ease-in-out;
 }
 
 .form-content h1 {
@@ -80,7 +83,7 @@ main{
     bottom: 20%;
     left: 5px;
     cursor: pointer;
-    top: -10px;
+    top: 5px;
 
 }
 
@@ -92,9 +95,16 @@ main{
     bottom: 20%;
     left: 25px;
     cursor: pointer;
-    top: -10px;
+    top: -5px;
 }
 
+@media (max-width: 1024px){
+
+    main{
+        overflow-y: auto;
+        height: auto;
+    }
+}
 @keyframes miAnimacion {
     0% {
       opacity: 0;
@@ -109,10 +119,3 @@ main{
 
 
 
-@media (max-width: 1024px){
-
-    main{
-        overflow-y: auto;
-        height: auto;
-    }
-}

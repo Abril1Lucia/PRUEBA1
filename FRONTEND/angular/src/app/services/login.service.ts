@@ -40,14 +40,4 @@ estaLogueado(){
   return this.obtenerToken()? true : false;
 }
 
-
-//nomas we cerrar sesion we
-CierreSesion(){
-    // mensaje del usuario
-    this._toastrService.info('D: por que te vas? ;-; ni modo chau... te voy a extrañar we');
-    // nos elimina el token del local Storage
-    localStorage.removeItem('token');
-    //redirecciona a la página de inicio después de cerrar sesión
-    this._router.navigate(['/']); 
-}
 }
